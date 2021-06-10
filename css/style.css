@@ -1,0 +1,52 @@
+/* Atributo global, ou seja, abrange todos os elementos da página */
+* {
+  margin: 0;
+}
+
+/* Seletor por id, realizando a modificação somente onde o id da tag html for = 'container' */
+#container {
+  width: 200px;
+}
+
+/* Seletor por classe, realizando a alteração somente onde a classe for = 'm-40' */
+.m-40 {
+  margin: 40px;
+}
+
+/* Alteração direto nas tags, podendo agrupar tags por tipo, aplicar estilos em múltiplas tag com o , */
+h1,
+h2 {
+  color: red;
+  font-size: 60px;
+  background: gray;
+}
+
+/* 
+  Níveis de força da cascata
+  0. Tag global (*)
+  1. Tag normal (h1)
+  10. Classe (html: class="myclass"/ css: .myclass {})
+  100. Id (html: id="myid" / css: #myid {})
+  100. Inline: css direto na tag html
+
+  Ao concatenar múltiplas classes, aumenta a força daquele elemento na cascata
+  Ex: h1.title#my-title = 1+10+100 = 111, logo teria mais força que uma classe sozinha
+*/
+#my-title,
+#my-title strong {
+  color: yellowgreen;
+}
+
+.title {
+  color: blue;
+}
+
+* {
+  color: gray;
+}
+h1.title#my-title {
+  border: 1px solid red;
+  margin: 200px;
+  padding: 60px;
+  color: red;
+}
